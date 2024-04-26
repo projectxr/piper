@@ -426,7 +426,7 @@ def ljspeech_dataset(args: argparse.Namespace) -> Iterable[Utterance]:
             if is_single_speaker or (len(row) == 2):
                 filename, text = row[0], row[-1]
             else:
-                filename, speaker, text = row[0], row[1], row[-1]
+                filename, text, speaker = row[0], row[1], row[-1]
 
             # Try file name relative to metadata
             wav_path = metadata_path.parent / filename
